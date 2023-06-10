@@ -76,6 +76,7 @@ a:hover {
     background: url(../public/images/logo.png) no-repeat;
     width: 220px;
     height: 70px;
+    background-size: 220px 70px;
     font-size: 28pt;
     font-weight: bold;
     cursor: pointer;
@@ -129,7 +130,7 @@ a:hover {
     font-size: 13pt;
     flex: 1;
     background: #000;
-    border-radius: 15px;
+    border-radius: 30px;
     box-shadow: 0 2px 2px #0d0f1a;
     border: 1px solid #ffffff1a;
     -webkit-backdrop-filter: blur(20px);
@@ -234,15 +235,23 @@ a:hover {
     cursor: default;
 }
 
+
 .menu>ul>a:hover>li,
-.menu>ul>a>li.active,
 .menu>ul>li:hover {
     border-bottom: 2px solid #ffffff;
     font-weight: bold;
 }
 
+.menu>ul>a>li.active, .sub-menu ul li.active {
+    font-weight: bold !important;
+}
+
 .menu>ul>li:hover {
     border-bottom: 2px solid #ffffff00;
+}
+
+.menu>ul>li:nth-child(2) .menu-item {
+    padding-left: 12px;
 }
 
 .top3 {
@@ -403,7 +412,7 @@ a:hover {
     margin-left: -100px;
     width: calc(100% + 200px);
     z-index: 100;
-    background: #4b5a66e0;
+    background: #4e7186e0;
 }
 
 .topblock:nth-child(2) {
@@ -427,7 +436,7 @@ a:hover {
 }
 
 .article {
-    background: #181818;
+    background: #282828;
     box-shadow: 0 20px 30px #0000009d;
     border-radius: 30px;
     flex-direction: column;
@@ -587,7 +596,7 @@ a:hover {
 .userheader button {
     position: relative;
     padding: 10px 20px;
-    border-radius: 7px;
+    border-radius: 100px;
     border: 1px solid #464646;
     font-size: 14px;
     text-transform: uppercase;
@@ -604,7 +613,7 @@ a:hover {
 }
 
 .userheader button:hover {
-    background: #4a5160;
+    background: #333740;
     box-shadow: 0 0 20px 5px #4a516057;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -626,7 +635,7 @@ a:hover {
     left: 0;
     right: 0;
     max-width: 1250px;
-    background: #424242;
+    background: #1e1e1e;
     z-index: 902;
     border-radius: 20px;
     display: flex;
@@ -636,7 +645,7 @@ a:hover {
 }
 
 .sign-divider {
-    background: #4b4b4b;
+    background: #262626;
     width: 2px;
     margin: 0 20px;
     display: flex;
@@ -646,7 +655,7 @@ a:hover {
 }
 
 .sign-divider div {
-    background: #4b4b4b;
+    background: #262626;
     border-radius: 100%;
     font-size: 10pt;
     padding: 5px;
@@ -692,7 +701,7 @@ a:hover {
 
 .sign-form input,
 .sign-form button {
-    background: #737373;
+    background: #373737;
     border: none;
     outline: none;
     padding: 12px 20px;
@@ -703,7 +712,7 @@ a:hover {
 }
 
 .sign-form input:focus {
-    background: #919191;
+    background: #4d4d4d;
 }
 
 .sign-form button {
@@ -1312,7 +1321,7 @@ a:hover {
     background: #000000fa;
     width: 100%;
     top: 45px;
-    border-radius: 0 0 7px 7px;
+    border-radius: 0 0 15px 15px;
     box-shadow: 5px 60px 50px #181818;
     z-index: 900;
     overflow: hidden;
@@ -1341,7 +1350,7 @@ a:hover {
 
 #sug-loading {
     height: 3px;
-    background: linear-gradient(90deg, #333b59, #cfcfcf);
+    background: linear-gradient(90deg, #4b5064, #242424);
     padding: 0;
     width: 50%;
     animation: spin-loading 0.8s ease infinite;
@@ -1942,10 +1951,21 @@ a:hover {
     color: #d0d0d0;
 }
 
+.content-middle #content-error::after {
+    font-size: 10em;
+    color: #d0d0d0;
+    content: "404";
+}
+
 .content-middle #content-error-text::after {
     font-size: 2.2em;
     color: #d0d0d0;
-    content: "Oops.. Something went wrong (404)";
+    content: "Oops.. Something went wrong";
+    margin-bottom: 20px;
+}
+
+.content-middle #content-error-text {
+    margin-bottom: 50px;
 }
 
 .stock-saved {
@@ -2011,23 +2031,23 @@ a:hover {
 }
 
 .catloading {
-    width: 150px;
+    width: 200px;
     display: inline-block;
-    height: 40px;
+    height: 45px;
     animation: cat-animation 0.7s infinite;
 }
 
 @keyframes cat-animation {
     0% {
-        border: 1px solid #7171716e;
+        border: 1px solid #71717196;
     }
 
     50% {
-        border: 1px solid #c2c2c26e;
+        border: 1px solid #7171716e;
     }
 
     100% {
-        border: 1px solid #7171716e;
+        border: 1px solid #71717196;
     }
 }
 
@@ -2290,10 +2310,10 @@ a:hover {
 }
 
 .footer-logo {
-    background: url(../public/images/favicon.ico) no-repeat;
-    width: 60px;
-    height: 60px;
-    background-size: 60px 60px;
+    background: url(../public/images/favicon.png) no-repeat;
+    width: 51px;
+    height: 51px;
+    background-size: 51px 51px;
     flex: 1;
     margin: auto;
     background-position: center;
@@ -3076,11 +3096,13 @@ a:hover {
     padding: 15px 30px 15px 20px;
 }
 
+
 .sub-menu ul a:hover,
 .sub-menu ul a li.active,
 .menu-item.active {
     font-weight: bold;
 }
+
 
 .menu>ul>li:hover .sub-menu {
     display: block;
@@ -3204,6 +3226,7 @@ a:hover {
     height: 150px;
     background: #3a3a3a;
     transition: all 0.05s linear;
+    box-shadow: 0 -10px 30px black;
 }
 
 .bar-space:hover .bar {
@@ -3350,6 +3373,7 @@ a:hover {
     .header {
         z-index: 901;
     }
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1300px) {
@@ -3454,7 +3478,7 @@ a:hover {
         justify-content: end;
         background: #090909;
         padding: 15px 0;
-        height: 65px;
+        height: 55px;
     }
 
     .header-search {
@@ -3471,7 +3495,7 @@ a:hover {
     }
 
     .header-content {
-        padding: 65px 5px 0;
+        padding: 50px 5px 0;
         height: 170px;
     }
 
@@ -3491,13 +3515,27 @@ a:hover {
     .userheader button.trigger-login {
         font-size: 8pt;
         border: none;
-        background: #4a5160;
+        border: 1px solid #464646;
+        border-radius: 1000px;
+        padding: 8px 10px;
     }
 
     .menu>ul>a:hover>li,
     .menu>ul>a>li.active,
     .menu>ul>li:hover {
         border: none !important;
+    }
+
+    .menu>ul>li:hover, .menu > ul > a:hover > li, .sub-menu ul li:hover, .sub-menu ul a:hover {
+        font-weight: normal;
+    }
+
+    .menu>ul>li:active, .menu > ul > a:active > li, .sub-menu ul li:active {
+        font-weight: bold;
+    }
+
+    .menu-item.active + .sub-menu {
+        display: block;
     }
 
     .menu>ul>a>li,
@@ -3509,6 +3547,10 @@ a:hover {
     .menu>ul>li i {
         position: absolute;
         right: 20px;
+    }
+
+    .menu>ul>li:nth-child(2) .menu-item {
+        padding: 0;
     }
 
     .header-height {
@@ -3798,10 +3840,6 @@ a:hover {
         padding: 10px 0 50px;
     }
 
-    .profile-menu {
-        right: -85px;
-    }
-
     .accountpage,
     .nosaved {
         height: auto;
@@ -3862,6 +3900,22 @@ a:hover {
     #contact-form {
         width: 100%;
         margin-top: 20px;
+    }
+
+    .search button {
+        margin: 0;
+    }
+
+    .suggestions-showmore.active, .suggestions-showmore:hover, .suggestion-row:hover, .suggestion-row.active {
+        background: none;
+    }
+
+    .suggestions-showmore:active, .suggestion-row:active {
+        background: #181818f0;
+    }
+
+    .new-comment {
+        width: 100%;
     }
 }
 

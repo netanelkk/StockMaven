@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Search from './search';
 import Member from './member';
 import Menu from './menu';
-import Modal from './sign-modal';
+import LoginModal from './login';
 
-function Header({ onLogout, isUserSignedIn, setIsUserSignedIn }) {
+function Header({ onLogout, isUserSignedIn }) {
     const [showSearch, setShowSearch] = useState(false);
     const [showMoved, setShowMoved] = useState(false);
     const [openModal, setOpenModal] = useState(false);
@@ -41,7 +41,7 @@ function Header({ onLogout, isUserSignedIn, setIsUserSignedIn }) {
 
     return (
         <>
-            {openModal && <Modal setOpenModal={setOpenModal} /> }
+            {openModal && <LoginModal setOpenModal={setOpenModal} /> }
             {(openMenu) && <div className="dark-bg"></div>}
             <div className={"header" + (showMoved ? ' moved' : '')}>
                 <div className='header-content'>
@@ -60,7 +60,6 @@ function Header({ onLogout, isUserSignedIn, setIsUserSignedIn }) {
                             </button>
                             <Member
                                 setOpenModal={setOpenModal}
-                                setIsUserSignedIn={setIsUserSignedIn}
                                 isUserSignedIn={isUserSignedIn}
                                 onLogout={onLogout} />
                         </div>

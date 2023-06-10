@@ -37,7 +37,7 @@ async function request(url, data, requestMethod = "POST") {
   });
 }
 
-const local = false;
+const local = true;
 let API_URL = "";
 if (local) {
   API_URL = "http://172.17.17.17:4100";

@@ -1,19 +1,19 @@
-import React, { useRef, useState, useEffect } from 'react'
-import Homepage from './components/homepage';
-import Stocks from './components/homepage/stocks';
-import Stock from './components/stock';
+import React, { useState, useEffect } from 'react'
 import Header from './components/header';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Homepage from './components/pages/homepage';
+import Stocks from './components/pages/stocks';
+import Stock from './components/pages/stock';
 import Top from './components/pages/top';
 import Saved from './components/pages/saved';
 import Account from './components/pages/account';
 import Analyse from './components/pages/analyse';
-import Error404 from './components/pages/error404';
 import Footer from './components/footer';
-import AboutUs from './components/about/about-us';
-import Contact from './components/about/contact';
-import Terms from './components/about/terms';
-import Privacy from './components/about/privacy';
+import AboutUs from './components/pages/static/about-us';
+import Contact from './components/pages/contact';
+import Terms from './components/pages/static/terms';
+import Privacy from './components/pages/static/privacy';
+import Error404 from './components/pages/static/error404';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,7 +25,7 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json'
 TimeAgo.addDefaultLocale(en);
 
-const local = false;
+const local = true;
 if (local) {
   window.PATH = "";
   window.API_URL = "http://localhost:4100";
@@ -38,6 +38,7 @@ if (local) {
 const Pages = React.memo(({ isUserSignedIn, onLogout }) => {
   const { pathname } = useLocation();
   
+  // Scroll back to top on router change
   useEffect(() => {
     const canControlScrollRestoration = 'scrollRestoration' in window.history
     if (canControlScrollRestoration) {
@@ -78,7 +79,7 @@ const Pages = React.memo(({ isUserSignedIn, onLogout }) => {
 });
 
 function App() {
-  const [isUserSignedIn, setIsUserSignedIn] = useState(localStorage.getItem('token') != null);
+  const [isUserSignedIn, setIsUserSignedIn] = useState(localStorage.getItem('token') !== null);
 
   const onLogout = () => {
     localStorage.removeItem("token");
@@ -90,10 +91,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header isUserSignedIn={isUserSignedIn} onLogout={onLogout}
-        setIsUserSignedIn={setIsUserSignedIn} />
-      <Pages isUserSignedIn={isUserSignedIn} onLogout={onLogout}
-        setIsUserSignedIn={setIsUserSignedIn} />
+      <Header isUserSignedIn={isUserSignedIn} onLogout={onLogout} />
+      <Pages isUserSignedIn={isUserSignedIn} onLogout={onLogout} />
       <Footer />
     </BrowserRouter>
   );

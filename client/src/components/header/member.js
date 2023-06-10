@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
-import { auth, mydetails } from '../../api';
+import { mydetails } from '../../api';
 
 
-const Login = ({ onLogout, isUserSignedIn, setIsUserSignedIn, setOpenModal }) => {
+const Member = ({ onLogout, isUserSignedIn, setOpenModal }) => {
     const [name, setName] = useState("");
     const [showMenu, setShowMenu] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -82,4 +82,4 @@ const Login = ({ onLogout, isUserSignedIn, setIsUserSignedIn, setOpenModal }) =>
 }
 
 
-export default Login;
+export default Member;
