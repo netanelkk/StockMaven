@@ -6,4 +6,4 @@ Written with Node.js, React, MySQL and python.
 
 ![תמונה](https://user-images.githubusercontent.com/102809424/227739687-03fb96b7-924e-4897-a24a-732f68db5cd0.png)
 
-Online demo: https://stockmaven.net/
+Online demo: [[https://stockmaven.net/](https://stockmaven.netanel.site/)](https://stockmaven.netanel.site/)
